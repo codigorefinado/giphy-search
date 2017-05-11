@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GiphySearchService {
@@ -9,8 +9,8 @@ export class GiphySearchService {
   }
 
   pesquisarGiphy(limit: string, term: string): Observable<Response> {
-    let url = 'https://api.giphy.com/v1/gifs/search?q=' + term + '&api_key=dc6zaTOxFJmzC&limit=' + limit;
+    const url = 'https://api.giphy.com/v1/gifs/search?q=' + term + '&api_key=dc6zaTOxFJmzC&limit=' + limit;
     return this.http.get(url);
   }
-
 }
+

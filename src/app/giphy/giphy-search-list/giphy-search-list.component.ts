@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'giphy-search-list',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GiphySearchListComponent implements OnInit {
 
   @Input()
-  gifs: any[] = [];
+  gifsList: any[] = [];
 
   constructor() {
   }

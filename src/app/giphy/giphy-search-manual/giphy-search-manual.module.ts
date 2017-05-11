@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
-import { GiphySearchManualComponent } from './giphy-search-manual.component';
-import { CommonModule } from '@angular/common';
-import { GiphySearchManualRoutingModule } from './giphy-search-routing.module';
+import { ShareModuleModule } from 'app/share/share.module';
 import { GiphySearchListModule } from '../giphy-search-list/giphy-search-list.module';
 import { GiphySearchService } from '../giphy-search.service';
-import { FormsModule } from '@angular/forms';
+
+import { GiphySearchManualComponent } from './giphy-search-manual.component';
+import { GiphySearchManualComponentRoutingModule } from './giphy-search-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule, GiphySearchManualRoutingModule, GiphySearchListModule, FormsModule,
-  ],
-  exports: [],
+  imports: [ ShareModuleModule, GiphySearchListModule, GiphySearchManualComponentRoutingModule ],
+  exports: [ GiphySearchManualComponent ],
   declarations: [ GiphySearchManualComponent ],
   providers: [ GiphySearchService ],
 })
-export class GiphySearchManualModule {
+export class GiphySearchManualComponentModule {
 }

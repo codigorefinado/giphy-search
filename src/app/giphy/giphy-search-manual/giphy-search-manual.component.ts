@@ -1,33 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
 import { Title } from '@angular/platform-browser';
 import { GiphySearchService } from '../giphy-search.service';
-import { Response } from '@angular/http';
 
 @Component({
-  selector: 'giphy-search',
+  selector: 'giphy-search-manual',
   templateUrl: 'giphy-search-manual.component.html'
 })
+
 export class GiphySearchManualComponent implements OnInit {
 
-  dataCriacao: Date = new Date(1988, 3, 15);
-  mensagem: string = 'Aguarde o curso de IONIC, em breve, fique ligado no YouTube '
-  youtube: string = 'https://goo.gl/h50OpD';
-
-
+  gifs: any[] = [];
   limit: string;
   term: string;
-  gifs: any[] = [];
 
-  constructor(protected title: Title, protected giphySearchService: GiphySearchService) {
+  constructor(private title: Title, private giphySearchService: GiphySearchService) {
   }
 
   ngOnInit() {
-    this.title.setTitle('Giphy search');
+    this.title.setTitle('By Clayton');
   }
 
-  public pesquisarGiphy() {
+  pesquisarGiphy() {
     this.giphySearchService.pesquisarGiphy(this.limit, this.term)
       .subscribe((response: Response) => this.gifs = response.json().data);
   }
-
 }

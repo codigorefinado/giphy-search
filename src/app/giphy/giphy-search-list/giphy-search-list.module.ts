@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ShareModuleModule } from 'app/share/share.module';
 import { GiphySearchListComponent } from './giphy-search-list.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [ GiphySearchListComponent ],
-  exports: [ GiphySearchListComponent ]
+  imports: [ ShareModuleModule ],
+  exports: [ GiphySearchListComponent ],
+  declarations: [ GiphySearchListComponent ]
 })
 export class GiphySearchListModule {
 }

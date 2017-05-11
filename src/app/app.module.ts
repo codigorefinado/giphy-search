@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { GiphySearchManualModule } from './giphy/giphy-search-manual/giphy-search-manual.module';
-import { ShareModule } from './share/share.module';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { GiphySearchManualComponentModule } from './giphy/giphy-search-manual/giphy-search-manual.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    ShareModule,
+    FormsModule,
+    HttpModule,
     AppRoutingModule,
-    GiphySearchManualModule
+    GiphySearchManualComponentModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

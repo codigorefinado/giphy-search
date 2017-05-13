@@ -1,6 +1,6 @@
 import { GiphySearchService } from '../giphy-search.service';
 
-fdescribe('giphy-search.service.spec.ts', () => {
+describe('giphy-search.service.spec.ts', () => {
 
   const httpMock = jasmine.createSpyObj('Http', [ 'get' ]);
 
